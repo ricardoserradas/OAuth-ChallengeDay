@@ -1,0 +1,24 @@
+﻿@model OpenIDChallengeDay.ViewModels.UserVm
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <p>Quem é essa aí, papai?</p>
+    <p>@Model.DisplayName</p>
+    <p>@Model.JobTitle</p>
+    <p>@Model.Email</p>
+
+    @using (Html.BeginForm("SendMail", "Home", FormMethod.Post)) {
+    <input type="text" id="mailBody" name="mailBody" />
+    <input type="submit" value="Send mail" />
+    }
+</body>
+</html>
